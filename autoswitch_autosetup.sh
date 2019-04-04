@@ -92,6 +92,7 @@ if [[ $# -gt 0 ]]; then
 	if [[ ${#1} -gt 1 ]]; then
 		curl https://raw.githubusercontent.com/lexandr0s/autoswitch/master/as-setup.sh | bash
 		TOKEN=$1
+		shift
 		. /hive-config/rig.conf
 		applyproperties
 	else
@@ -99,125 +100,144 @@ if [[ $# -gt 0 ]]; then
 		exit
 	fi
 	
-	if [[ $2 =~ ^[0-9]+$ ]]; then
-		keccak=$2	
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		keccak=$1
+		shift
 	else
 		echo "Argument 2 must be an Keccak Hashrate MHs"
 		exit
 	fi
 	
-	if [[ $3 =~ ^[0-9]+$ ]]; then
-		nist5=$3		
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		nist5=$1
+		shift
 	else
 		echo "Argument 3 must be an Nist5 Hashrate MHs"
 		exit
 	fi
-	if [[ $4 =~ ^[0-9]+$ ]]; then
-		neoscrypt=$4			
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		neoscrypt=$1	
+		shift
 	else
 		echo "Argument 4 must be an NeoScrypt Hashrate MHs"
 		exit
 	fi
-	if [[ $5 =~ ^[0-9]+$ ]]; then
-		lyra2re=$5				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		lyra2re=$1
+		shift
 	else
 		echo "Argument 5 must be an Lyra2RE Hashrate MHs"
 		exit
 	fi
-	if [[ $6 =~ ^[0-9]+$ ]]; then
-		lyra2rev2=$6					
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		lyra2rev2=$1
+		shift
 	else
 		echo "Argument 6 must be an Lyra2REv2 Hashrate MHs"
 		exit
 	fi
-	if [[ $7 =~ ^[0-9]+$ ]]; then
-		ethash=$7				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		ethash=$1
+		shift
 	else
 		echo "Argument 7 must be an Ethash Hashrate MHS"
 		exit
 	fi
-	if [[ $8 =~ ^[0-9]+$ ]]; then
-		skunk=$8				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		skunk=$1
+		shift
 	else
 		echo "Argument 8 must be an Skunk Hashrate MHS"
 	exit
 	fi
-	if [[ $9 =~ ^[0-9]+$ ]]; then
-		cryptonightv7=$9				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		cryptonightv7=$1
+		shift
 	else
 		echo "Argument 9 must be an CryptoNightV7 Hashrate kHS"
 		exit
 	fi
-	if [[ $10 =~ ^[0-9]+$ ]]; then
-		cryptonightheavy=$10				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		cryptonightheavy=$1
+		shift
 	else
 		echo "Argument 10 must be an CryptoNightHeavy Hashrate MHS"
 		exit
 	fi
-	if [[ $11 =~ ^[0-9]+$ ]]; then
-		lyra2z=$11				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		lyra2z=$1
+		shift
 	else
 		echo "Argument 11 must be an Lyra2Z Hashrate MHS"
 		exit
 	fi
-	if [[ $12 =~ ^[0-9]+$ ]]; then
-		x16r=$12				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		x16r=$1
+		shift
 	else
 		echo "Argument 12 must be an X16r Hashrate MHS"
 		exit
 	fi
-	if [[ $13 =~ ^[0-9]+$ ]]; then
-		cryptonightv8=$13				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		cryptonightv8=$1
+		shift
 	else
 		echo "Argument 13 must be an CryptoNightV8 Hashrate MHS"
 		exit
 	fi
-	if [[ $14 =~ ^[0-9]+$ ]]; then
-		mtp=$14				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		mtp=$1
+		shift
 	else
 		echo "Argument 14 must be an MTP Hashrate MHS"
 		exit
 	fi
-	if [[ $15 =~ ^[0-9]+$ ]]; then
-		cuckaroo29=$15				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		cuckaroo29=$1
+		shift
 	else
 		echo "Argument 15 must be an Cuckaroo29 Hashrate HS"
 		exit
 	fi
-	if [[ $16 =~ ^[0-9]+$ ]]; then
-		cryptonightr=$16				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		cryptonightr=$1
+		shift
 	else
 		echo "Argument 16 must be an CryptoNightV8 Hashrate MHS"
 		exit
 	fi
-	if [[ $17 =~ ^[0-9]+$ ]]; then
-		cuckaroo31=$17				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		cuckaroo31=$1
+		shift
 	else
 		echo "Argument 17 must be an Cuckaroo31 Hashrate HS"
 		exit
 	fi
-	if [[ $18 =~ ^[0-9]+$ ]]; then
-		lyra2rev3=$18				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		lyra2rev3=$1
+		shift
 	else
 		echo "Argument 18 must be an Lyra2REv3 Hashrate MHS"
 		exit
 	fi
-	if [[ $19 =~ ^[0-9]+$ ]]; then
-		zhash=$19				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		zhash=$1
+		shift
 	else
 		echo "Argument 19 must be an Zhash Hashrate HS"
 		exit
 	fi
-	if [[ $20 =~ ^[0-9]+$ ]]; then
-		beam=$20				
+	if [[ $1 =~ ^[0-9]+$ ]]; then
+		beam=$1
+		shift
 	else
 		echo "Argument 20 must be an Beam Hashrate HS"
 		exit
 	fi
-	if [[ $21 =~ ^[Yy]$ ]]; then
+	if [[ $1 =~ ^[Yy]$ ]]; then
 		applyhashrate
 		autoswitch start
-	elif [[ $21 =~ ^[Nn]$ ]]; then
+	elif [[ $1 =~ ^[Nn]$ ]]; then
 		applyhashrate
 		echo "Autoswitch not started"
 	else
