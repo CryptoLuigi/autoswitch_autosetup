@@ -19,7 +19,7 @@ function applyhashrate()
 	echo "$lyra2rev2" | sed -i -e"s/^\"Lyra2REv2\":.*/\"Lyra2REv2\":$lyra2rev2/" /hive-config/autoswitch.conf
 	echo "$ethash" | sed -i -e"s/^\"Ethash\":.*/\"Ethash\":$ethash/" /hive-config/autoswitch.conf
 	echo "$skunk" | sed -i -e"s/^\"Skunk\":.*/\"Skunk\":$skunk/" /hive-config/autoswitch.conf
-	#echo "$cryptonightv7" | sed -i -e"s/^\"CryptoNightV7\":.*/\"CryptoNightV7\":$cryptonightv7/" /hive-config/autoswitch.conf
+	echo "$cryptonightv7" | sed -i -e"s/^\"CryptoNightV7\":.*/\"CryptoNightV7\":$cryptonightv7/" /hive-config/autoswitch.conf
 	echo "$cryptonightr" | sed -i -e"s/^\"CryptoNightR\":.*/\"CryptoNightR\":$cryptonightr/" /hive-config/autoswitch.conf
 	echo "$cryptonightv8" | sed -i -e"s/^\"CryptoNightV8\":.*/\"CryptoNightV8\":$cryptonightv8/" /hive-config/autoswitch.conf
 	echo "$cryptonightheavy" | sed -i -e"s/^\"CryptoNightHeavy\":.*/\"CryptoNightHeavy\":$cryptonightheavy/" /hive-config/autoswitch.conf
@@ -64,7 +64,7 @@ if [[ $# -eq 0 ]]; then
 		read -p "What is your Lyra2REv2 Hashrate MHs? (0 for disable):" lyra2rev2
 		read -p "What is your DaggerHashimoto Hashrate MHs? (0 for disable):" ethash
 		read -p "What is your Skunk Hashrate MHs? (0 for disable):" skunk
-		#read -p "What is your CryptoNightV7 Hashrate kHs? (0 for disable):" cryptonightv7
+		read -p "What is your CryptoNightV7 Hashrate kHs? (0 for disable):" cryptonightv7
 		read -p "What is your CryptoNightHeavy Hashrate kHs? (0 for disable):" cryptonightheavy
 		read -p "What is your Lyra2Z Hashrate MHs? (0 for disable):" lyra2z
 		read -p "What is your X16r Hashrate MHs? (0 for disable):" x16r
