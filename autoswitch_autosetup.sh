@@ -9,7 +9,7 @@ function applyproperties()
 	echo "$FARM_ID" | sed -i -e"s/^FARM_ID=.*/FARM_ID=$FARM_ID/" /hive-config/autoswitch.conf
 	echo "$TOKEN" | sed -i -e"s/^TOKEN=.*/TOKEN=\"$TOKEN\"/" /hive-config/autoswitch.conf
 }
-function applyhashate()
+function applyhashrate()
 {
 	echo "$keccak" | sed -i -e"s/^\"Keccak\":.*/\"Keccak\":$keccak/" /hive-config/autoswitch.conf
 	echo "$nist5" | sed -i -e"s/^\"Nist5\":.*/\"Nist5\":$nist5/" /hive-config/autoswitch.conf
@@ -76,7 +76,7 @@ if [[ $# -eq 0 ]]; then
 		read -p "What is your Lyra2REv3 Hashrate MHs? (0 for disable):" lyra2rev3
 		read -p "What is your Zhash Hashrate Hs? (0 for disable):" zhash
 		read -p "What is your Beam Hashrate Hs? (0 for disable):" beam
-		applyhashate
+		applyhashrate
 	fi
 	
 	read -p "Do you want to start Nicehash autoswitch?(y/n)" -n 1 -r
@@ -215,10 +215,10 @@ if [[ $# -gt 0 ]]; then
 		exit
 	fi
 	if [[ $21 =~ ^[Yy]$ ]]; then
-		applyhashate
+		applyhashrate
 		autoswitch start
 	elif [[ $21 =~ ^[Nn]$ ]]; then
-		applyhashate
+		applyhashrate
 		echo "Autoswitch not started"
 	else
 	echo "For argument 21 please select y/n"
