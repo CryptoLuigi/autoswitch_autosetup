@@ -81,8 +81,8 @@ if [[ $# -eq 0 ]]; then
 	
 	read -p "Do you want to start Nicehash autoswitch?(y/n)" -n 1 -r
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
+		autoswitch config
 		autoswitch start
-
 	fi
 	echo
 	echo "Installation of Nicehash Autoswitch is complete."
@@ -99,7 +99,6 @@ if [[ $# -gt 0 ]]; then
 		echo "Argument 1 must be an APIkey"
 		exit
 	fi
-	
 	if [[ $1 =~ ^[0-9]+$ ]]; then
 		keccak=$1
 		shift
@@ -107,7 +106,6 @@ if [[ $# -gt 0 ]]; then
 		echo "Argument 2 must be an Keccak Hashrate MHs"
 		exit
 	fi
-	
 	if [[ $1 =~ ^[0-9]+$ ]]; then
 		nist5=$1
 		shift
@@ -236,9 +234,11 @@ if [[ $# -gt 0 ]]; then
 	fi
 	if [[ $1 =~ ^[Yy]$ ]]; then
 		applyhashrate
+		autoswitch config
 		autoswitch start
 	elif [[ $1 =~ ^[Nn]$ ]]; then
 		applyhashrate
+		autoswitch config
 		echo "Autoswitch not started"
 	else
 	echo "For argument 21 please select y/n"
