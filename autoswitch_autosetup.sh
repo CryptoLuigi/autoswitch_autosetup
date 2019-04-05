@@ -2,7 +2,7 @@
 #Script is for the automatic installation for autoswitch nicehash on HiveOS
 #Script By CryptoLuigi (Michael Ruperto)
 #Date: 2019-03-20
-#Updated: 2019-04-04
+#Updated: 2019-04-05
 
 function applyproperties()
 {
@@ -57,28 +57,48 @@ if [[ $# -eq 0 ]]; then
 	fi
 	read -p "Do you know the hashrates of the algos you want to mine?(y/n)" -n 1 -r
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
+		echo
 		read -p "What is your Keccak Hashrate MHs? (0 for disable):" keccak
+		echo
 		read -p "What is your Nist5 Hashrate MHs? (0 for disable):" nist5
+		echo
 		read -p "What is your NeoScrypt Hashrate MHs? (0 for disable):" neoscrypt
+		echo
 		read -p "What is your Lyra2RE Hashrate MHs? (0 for disable):" lyra2re
+		echo
 		read -p "What is your Lyra2REv2 Hashrate MHs? (0 for disable):" lyra2rev2
+		echo
 		read -p "What is your DaggerHashimoto Hashrate MHs? (0 for disable):" ethash
+		echo
 		read -p "What is your Skunk Hashrate MHs? (0 for disable):" skunk
+		echo
 		read -p "What is your CryptoNightV7 Hashrate kHs? (0 for disable):" cryptonightv7
+		echo
 		read -p "What is your CryptoNightHeavy Hashrate kHs? (0 for disable):" cryptonightheavy
+		echo
 		read -p "What is your Lyra2Z Hashrate MHs? (0 for disable):" lyra2z
+		echo
 		read -p "What is your X16r Hashrate MHs? (0 for disable):" x16r
+		echo
 		read -p "What is your CryptoNightV8 Hashrate kHs? (0 for disable):" cryptonightv8
+		echo
 		read -p "What is your MTP Hashrate MHs? (0 for disable):" mtp
+		echo
 		read -p "What is your Cuckaroo29 Hashrate Hs? (0 for disable):" cuckaroo29
+		echo
 		read -p "What is your CryptoNightR Hashrate kHs? (0 for disable):" cryptonightr
+		echo
 		read -p "What is your Cuckaroo31 Hashrate Hs? (0 for disable):" cuckaroo31
+		echo
 		read -p "What is your Lyra2REv3 Hashrate MHs? (0 for disable):" lyra2rev3
+		echo
 		read -p "What is your Zhash Hashrate Hs? (0 for disable):" zhash
+		echo
 		read -p "What is your Beam Hashrate Hs? (0 for disable):" beam
 		applyhashrate
 	fi
 	
+	echo
 	read -p "Do you want to start Nicehash autoswitch?(y/n)" -n 1 -r
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		autoswitch config
@@ -243,5 +263,5 @@ if [[ $# -gt 0 ]]; then
 	else
 	echo "For argument 21 please select y/n"
 	exit
-fi
+	fi
 fi
