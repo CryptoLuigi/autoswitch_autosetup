@@ -133,7 +133,7 @@ if [[ $# -gt 0 ]]; then
 		echo "Argument 3 must be an Nist5 Hashrate MHs"
 		exit
 	fi
-	if [[ $1 -eq ^[0-9]*(\.[0-9]+)?$ ]]; then
+	if [[ $1 =~ ^[0-9]*(\.[0-9]+)?$ ]]; then
 		neoscrypt=$1	
 		shift
 	else
