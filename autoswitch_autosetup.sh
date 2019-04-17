@@ -133,7 +133,7 @@ if [[ $# -gt 0 ]]; then
 		echo "Argument 3 must be an Nist5 Hashrate MHs"
 		exit
 	fi
-	if [[ $1 =~ ^[0-9]+$ ]]; then
+	if [[ $1 =~ ^[0-9]*(\.[0-9]+)?$ ]]; then
 		neoscrypt=$1	
 		shift
 	else
@@ -175,7 +175,7 @@ if [[ $# -gt 0 ]]; then
 		echo "Argument 9 must be an CryptoNightV7 Hashrate kHS"
 		exit
 	fi
-	if [[ $1 =~ ^[0-9]+$ ]]; then
+	if [[ $1 =~ ^[0-9]*(\.[0-9]+)?$ ]]; then
 		cryptonightheavy=$1
 		shift
 	else
@@ -217,7 +217,7 @@ if [[ $# -gt 0 ]]; then
 		echo "Argument 15 must be an Cuckaroo29 Hashrate HS"
 		exit
 	fi
-	if [[ $1 =~ ^[0-9]+$ ]]; then
+	if [[ $1 =~ ^[0-9]*(\.[0-9]+)?$ ]]; then
 		cryptonightr=$1
 		shift
 	else
