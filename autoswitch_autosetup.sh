@@ -119,7 +119,7 @@ if [[ $# -gt 0 ]]; then
 		echo "Argument 1 must be an APIkey"
 		exit
 	fi
-	if [[ $1 =~ ^[0-9]+$ ]]; then
+	if [[ $1 =~ ^[0-9]*(\.[0-9]+)?$ ]]; then
 		keccak=$1
 		shift
 	else
