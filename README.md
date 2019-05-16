@@ -42,3 +42,6 @@ Last [y/n] is if you want to start up autoswitch now
  Here is a video guide: https://www.youtube.com/watch?v=6gGkuxTWq8o
  
  [![Hiveos Tutorial: Automatic installation of Nicehash Autoswitch on HiveOS](https://img.youtube.com/vi/6gGkuxTWq8o/0.jpg)](https://www.youtube.com/watch?v=6gGkuxTWq8o "Hiveos Tutorial: Automatic installation of Nicehash Autoswitch on HiveOS")
+
+
+For support: https://forum.hiveos.farm/t/en-autosetup-script-for-nicehash-autoswitch
